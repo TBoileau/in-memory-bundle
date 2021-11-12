@@ -26,7 +26,7 @@ final class CollectionFactory implements CollectionFactoryInterface
             $column = $metadata->columns[$index];
             $collection->addIndex(
                 $column->name,
-                static fn (object $entity, $index) => $propertyAccessor->getValue($entity, $index)
+                static fn (object $entity, string $index) => $propertyAccessor->getValue($entity, $index)
             );
         }
 
