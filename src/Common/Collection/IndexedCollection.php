@@ -98,7 +98,7 @@ final class IndexedCollection extends ArrayCollection implements Collection
             throw new NotAllowedToIndexException('You cannot index when the collection is already filled.');
         }
 
-        $this->indexes[$name] = static fn (object $data): string|int|float|bool|null => $callback($data);
+        $this->indexes[$name] = static fn (object $data): string|int|float|bool|null => $callback($data, $name);
     }
 
     public function findByIndex(string $index, mixed $value): IndexedCollection
@@ -108,7 +108,7 @@ final class IndexedCollection extends ArrayCollection implements Collection
             $this->indexes,
             array_filter(
                 $this->toArray(),
-                fn (int $key): bool => in_array($key, $this->indexedElements[$index][$value]),
+                fn (int $key): bool => in_array($key, $this->indexedElements[$index][$value] ?? []),
                 ARRAY_FILTER_USE_KEY
             )
         );
