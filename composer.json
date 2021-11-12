@@ -1,0 +1,29 @@
+{
+    "name": "tboileau/in-memory-bundle",
+    "description": "InMemoryBundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TBoileau\\InMemoryBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TBoileau",
+            "email": "t-boileau@email.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0",
+        "symfony/property-access": "5.3.*",
+        "symfony/serializer": "5.3.*",
+        "symfony/http-kernel": "5.3.*",
+        "symfony/dependency-injection": "5.3.*",
+        "doctrine/common": "3.2.*",
+        "symfony/filesystem": "^5.3",
+        "symfony/config": "^5.3",
+        "symfony/console": "^5.3"
+    }
+}
